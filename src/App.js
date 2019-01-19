@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from "./Components/Card.js"
 import './App.css';
+import image from "./chuck-norris.png"
 
 class App extends Component {
   constructor(props) {
@@ -40,8 +41,9 @@ class App extends Component {
         <div className="row justify-content-center py-5">
           <div className="col-8 text-center">
             <h1 className="pb-2">Welcome Chuck</h1>
+            <img src={image} alt="check norris"></img>
             <p className="pb-2">An app for randomly generating bits of Chuck Norris quotes.</p>
-            <button className="btn btn-danger btn-lg" onClick={this.generateQuote}>Karate Chop</button>
+    
           </div>
         </div>
         <div className="row justify-content-center">
@@ -50,6 +52,7 @@ class App extends Component {
             tags={this.state.tags}
           />
             : ""}
+          <button className="btn btn-danger btn-lg" onClick={this.generateQuote}>Karate Chop</button>
         </div>
       </div>
     );
