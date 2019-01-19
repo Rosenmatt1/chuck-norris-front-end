@@ -35,28 +35,31 @@ class App extends Component {
       })
   }
 
-  render() {
-    return (
-      <div className="container-fluid">
-        <div className="row justify-content-center py-5">
-          <div className="col-8 text-center">
-            <h1 className="pb-2">Welcome Chuck</h1>
-            <img src={image} alt="check norris"></img>
-            <p className="pb-2">An app for randomly generating bits of Chuck Norris quotes.</p>
-    
+  
+
+render() {
+  return (
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-10 text-center">
+          <img src={image} alt="chuck" style={{ height: "200px" }} />
+          <h1 className="">Hello Chuck!</h1>
+          <p className="">An app for randomly generating Chuck Norris jokes.</p>
+          <div className="row justify-content-center">
+            {
+              this.state.quote ? <Card
+                quote={this.state.quote}
+                tags={this.state.tags}
+              />
+                : <div></div>
+            }
           </div>
-        </div>
-        <div className="row justify-content-center">
-          {this.state.quote ? <Card
-            quote={this.state.quote}
-            tags={this.state.tags}
-          />
-            : ""}
-          <button className="btn btn-danger btn-lg" onClick={this.generateQuote}>Karate Chop</button>
+          <button className="btn btn-danger btn-lg" onClick={this.generateQuote}><i className="fas fa-fist-raised" style={{ fontSize: "50px" }}></i><br></br>Karate Chop!</button>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 }
 
 export default App;
