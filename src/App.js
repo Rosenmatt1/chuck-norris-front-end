@@ -35,31 +35,30 @@ class App extends Component {
       })
   }
 
-  
 
-render() {
-  return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-10 text-center">
-          <img src={image} alt="chuck" style={{ height: "200px" }} />
-          <h1 className="">Hello Chuck!</h1>
-          <p className="">An app for randomly generating Chuck Norris jokes.</p>
-          <div className="row justify-content-center">
-            {
-              this.state.quote ? <Card
-                quote={this.state.quote}
-                tags={this.state.tags}
-              />
-                : <div></div>
-            }
+  render() {
+    return (
+      <div className="container">
+        <div className="row justify-content-center column">
+          <div className="col-10 text-center">
+            <h1 className="my-2">Hello Chuck!</h1>
+            <img src={image} alt="chuck" style={{ height: "200px" }} />
+            <p className="">An app for randomly generating Chuck Norris jokes.</p>
+            <div className="row justify-content-center">
+              {
+                this.state.quote ? <Card
+                  quote={this.state.quote}
+                  tags={this.state.tags}
+                />
+                  : <div></div>
+              }
+            </div>
+            <button className="btn btn-danger btn-lg" onClick={this.generateQuote}>Karate Chop!<br></br><i className="fas fa-fist-raised" style={{ fontSize: "50px" }}></i></button>
           </div>
-          <button className="btn btn-danger btn-lg" onClick={this.generateQuote}><i className="fas fa-fist-raised" style={{ fontSize: "50px" }}></i><br></br>Karate Chop!</button>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default App;
