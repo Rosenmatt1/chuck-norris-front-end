@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Card from "./Components/Card.js"
 import './App.css';
 import image from "./chuck-norris.png"
-import sound from './upper-cut.mp3'
 
 class App extends Component {
   constructor(props) {
