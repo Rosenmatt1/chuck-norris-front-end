@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from "./Components/Card.js"
 import './App.css';
 import image from "./chuck-norris.png"
+import sound from './upper-cut.mp3'
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +25,8 @@ class App extends Component {
       quote: randomJoke.joke,
       tags: randomJoke.categories
     })
+    var sound = new Audio("upper-cut.mp3")
+    sound.play()
   }
 
   componentDidMount() {
@@ -53,7 +56,14 @@ class App extends Component {
                   : <div></div>
               }
             </div>
-            <button className="btn btn-danger btn-lg" onClick={this.generateQuote}>Karate Chop!<br></br><i className="fas fa-fist-raised" style={{ fontSize: "50px" }}></i></button>
+            <button
+              className="btn btn-danger btn-lg" 
+              onClick={this.generateQuote}>
+              Karate Chop!
+              <br></br>
+              <i className="fas fa-fist-raised" style={{ fontSize: "50px" }}>
+              </i>
+            </button>
           </div>
         </div>
       </div>
