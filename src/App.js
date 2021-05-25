@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from "./Components/Card.js"
 import './App.css';
 import image from "./chuck-norris.png"
+import data from './data.json'
 
 class App extends Component {
   constructor(props) {
@@ -29,12 +30,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
-      .then(data => data.json())
-      .then(JSONdata => {
-        console.log(JSONdata)
-        this.setState({ jokes: JSONdata.data.jokes })
-      })
+    // fetch("https://chuck-norris-quote-generator.herokuapp.com/jokes")
+    //   .then(data => data.json())
+    //   .then(JSONdata => {
+    //     console.log(JSONdata)
+    //     this.setState({ jokes: JSONdata.data.jokes })
+    //   })
+    this.setState({ jokes: data.jokes })
+    console.log("data", data)
+    console.log("jokes", this.state.jokes)
   }
 
 
