@@ -60,7 +60,7 @@ class App extends Component {
               }
             </div>
             <button
-              className="btn btn-danger btn-lg" 
+              className="btn btn-danger btn-lg"
               onClick={this.generateQuote}>
               Karate Chop!
               <br></br>
